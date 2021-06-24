@@ -1,0 +1,346 @@
+.outer{
+    width: 100%;
+    height: 100%;
+    display: inherit;
+   
+}
+.background{
+    background: blue;
+    width:100%;
+    height: 100px;
+    float: left;
+    position: fixed;
+    z-index: 1;
+}
+.background h1{
+    font-family: serif;
+    text-align: center;
+    padding-top: 30px;
+    color: ghostwhite;
+    font-size: 40px;
+    margin: 0px;
+}
+.content{
+    // display: block;
+    // float: left;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 12%;
+}
+.layer{
+    width:18%;
+    background: linear-gradient(blue, white);
+    height: auto;
+    // float: left;
+    top:12%;
+    position: fixed;
+}
+.layer p{
+    margin-left: 15px;
+    font-size: 19px;
+    border: 1px solid white;
+    width: 86%;
+    border-radius: 7px;
+    background: white;
+    text-align: center;
+    padding: 5px;
+}
+.layer  :hover{
+    background-color: black;
+    color: aliceblue;
+    cursor: pointer;
+}
+.layer button{
+    width: 39%;
+    height: 29px;
+    font-size: 18px;
+    margin-left: 25%;
+    border-radius: 7px;
+    margin-top: 6px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.info{
+    width: 75%;
+    height: 500px;
+    position: relative;
+    margin-top: 50px;
+    float: left;
+    padding-bottom: 10px;
+    z-index: 0;
+    left: 21.5%;
+}
+.info p{
+    font-size: 18px;
+    margin: 0px;
+    width: 43%;
+    float: left;
+    text-align: right;
+    margin-top: 17px;
+    margin-right: 17px;
+}
+.info input{
+    margin-top: 11px;
+    width: 50%;
+    height: 27px;
+    border-radius: 7px;
+    font-size: 15px;
+    background: white;
+    border: 2px solid black;
+}
+.info select{
+    float: left;
+    width: 51.5%;
+    height: 31px;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-right:0px;
+    // margin-left: 2px;
+    background: white;
+    border: 2px solid black;
+}
+.info h3{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: 23px;
+    margin-left: 2%;
+    float: left;
+    width: 80%;
+    font-size: 23px;
+}
+.info h6{
+    margin: 0px;
+    font-size: 15px;
+    height: 30px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 13px;
+}
+.box{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    float: left;
+}
+
+#school ,#student ,#family, #address{
+    width:18%;
+    font-size: 22px;
+}
+#reservation ,#medium{
+    width:20% ;
+    font-size: 22px;
+}
+#bank{
+    width: 23%;
+    font-size: 22px;
+}
+#others{
+    width: 15%;
+    font-size: 22px;
+}
+#same{
+    margin-top: 39px;
+}
+#back{
+    display: none;
+}
+.info button{
+    width: 10%;
+    height: 29px;
+    font-size: 18px;
+    margin-left: 45%;
+    margin-top: 19px;
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:1417px){
+    .box{
+        width:44%;
+    }
+    .layer p{
+        width: 82%;
+        font-size: 17px;
+    }
+    #school ,#student ,#family, #address,#reservation ,#medium ,#bank, #others{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:768px){
+        .content{
+            top: 9%;
+        }
+        .layer{
+            width: 22%;
+            top: 9%;
+        }
+        .layer p{
+            font-size: 12px;
+            width: 79%;
+        }
+        .info{
+            width: 71%;
+            left: 25%;
+            margin-top: 25px;
+        }
+        .info h6{
+            font-size: 10px;
+        }
+        .box{
+            width:49%
+        }
+        .box p{
+            font-size: 14px;
+            width:58%;
+            margin-right: 10px;
+        }
+        .box input{
+            width: 37%;
+            height: 22px;
+        }
+        .box select{
+            width: 41%;
+            height: 29px;
+        }
+        #school ,#student ,#family{
+            width: 31%;
+            font-size: 19px;
+        }
+        #address{
+            width: 34%;
+            font-size: 19px;
+        }
+        #reservation,#medium{
+            width: 39%;
+            font-size: 19px;
+        }
+        #bank{
+            width: 41%;
+            font-size: 19px; 
+        }
+        #others{
+            width: 30%;
+            font-size: 19px
+        }
+    }
+
+@media only screen and (max-width:600px){
+    .outer{
+        width: 99%;
+    }
+    .content{
+        width: 100%;
+        display: flow-root;
+        margin-top: 10px;
+    }
+    .layer{
+        display: none;
+    }
+    .info{
+        margin-left: 0px;
+        left: 0%;
+    }
+    .background{
+        height: 90px;
+    }
+    .background h1{
+        font-size: 28px;
+        height: 62px;
+        padding-top: 28px;
+        background: linear-gradient(blue, white);
+        color: black;
+    }
+    .info{
+        width: 99%;
+        margin-left: 3px;
+        height: auto;
+    }
+    .info p{
+        width: 97%;
+        text-align: left;
+        font-size: 20px;
+        line-height: 17px;
+    }
+    .info input{
+        width: 97%;
+    }
+    .buttons{
+        width: 100%;
+        display: flex;
+    }
+    .info button{
+        width: 21%;
+        margin-left: 38%;
+    }
+    .info select{
+        width: 100%;
+        margin-right: 51%;
+        overflow: hidden;
+    }
+    .info option{
+        width: auto;
+    }
+    #back{
+        display: block;
+        margin-left: 47px;
+    }
+    #next{
+        margin-left: 24%;
+    }
+    #school ,#student ,#family{
+        width: 51%;
+        font-size: 20px;
+    }
+    #address{
+        width: 53%;
+        font-size: 20px; 
+    }
+    #reservation ,#medium{
+        width:61%;
+        font-size: 20px;
+    }
+    #bank{
+        width: 70%;
+        font-size: 20px;
+    }
+    #others{
+        width:54%;
+        font-size: 20px;
+    }
+    #same{
+        margin-top: 0px;
+    }
+    .box{
+        width: 100%;
+        display: flow-root;
+        height: auto;
+    }
+    .footer{
+        width: 100%;
+        height: 40px;
+    }
+    .footer h1{
+        border: none;
+        padding-top: 27px;
+        height: 55px;
+    }
+    .user{
+        width: 92%;
+        margin-left: 21px;
+    }
+    .user img{
+        margin-top: 0px;
+    }
+    .user p{
+        font-size: 17px;
+    }
+}

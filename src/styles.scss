@@ -1,0 +1,15 @@
+
+body{
+    display:flow-root;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none; /* ios Safari*/
+    -khtml-user-select : none;   /*Chrome 6.0+ , Safari 3.1+ , Edge &Opera 15+ */
+    -moz-user-select : none;     /*Firefox */
+    -ms-user-select : none;      /* IE 10+ and Edge */
+    user-select: none;           /*Non-prefixed version, currently supported by chrome & Opera */
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    text-transform: capitalize;
+    margin: 0px;
+    }
+    

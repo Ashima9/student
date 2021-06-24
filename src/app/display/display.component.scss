@@ -1,0 +1,190 @@
+#boundry{
+    width: 99%;
+    height: 100%;
+    display: flow-root;
+    margin: 8px;
+}
+h1{
+    text-align: center;
+    font-size: 18px;
+}
+.border{
+    border: 1px solid black;
+    width: 100%;
+    float: left;
+}
+.logo{
+    width: 11%;
+    height: 216px;
+    float: left;
+}
+.logo img{
+    width: 71%;
+    height: 78px;
+    margin-top: 59px;
+    margin-left: 5px;
+}
+.box{
+    width: 100%;
+    display: flex;
+}
+.school{
+    float: left;
+    width: 74%;
+    height: 216px;
+    border-left: 1px solid black;
+    display: block;
+}
+.school h6{
+    width: 44%;
+    float: left;
+    margin: 0px;
+    text-align: right;
+    font-size: 15px;
+    font-weight: normal;
+}
+.school p{
+    width: 54%;
+    float: right;
+    font-size: 15px;
+    margin-left: 3px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.school hr{
+    width: 100%;
+    margin: 0px;
+}
+.photo{
+    float: left;
+    width: 13%;
+    height: 216px;
+    border-left: 1px solid black;
+}
+.photo h6{
+    float: left;
+    margin: 3px;
+    width: 55%;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+}
+.photo p{
+    float: left;
+    width: 35%;
+    margin: 3px;
+}
+.photo hr{
+    width: 100%;
+}
+.pic{
+    width: 94%;
+    // border: 2px solid black;
+    float: left;
+    height: 140px;
+    margin-top: 17px;
+    margin-left: 8px;
+    
+}
+.pic p{
+    text-align: center;
+    width: 100%;
+}
+
+.instruction{
+    float: left;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.instruction h5{
+    font-style: italic;
+    font-size: 15px;
+    margin: 7px;
+}
+.instruction p{
+    margin: 0px;
+    margin-left: 39px;
+}
+.student ,.family ,.sibling ,.contact ,.reservation ,.medium ,.past ,.bank ,.other ,.declaration ,.attach{
+    width: 100%;
+    float: left;
+
+}
+.student  hr ,.family hr ,.sibling hr ,.contact hr ,.reservation hr ,.medium hr ,.past hr ,.bank hr ,.other hr ,.declaration hr ,.attach hr{
+    margin: 0px;
+    width: 100%;
+}
+.student h4{
+    text-align: center;
+    margin: 0px;
+}
+.student h1,.family h1 ,.sibling h1 ,.contact h1 ,.reservation h1 ,.medium h1 ,.past h1 ,.bank h1 ,.other h1 ,.declaration h1 ,.attach h1{
+    text-align: left; 
+    font-size: 19px;
+    margin: 0px;
+}
+.student h6 ,.family h6 ,.sibling h6 ,.contact h6 ,.reservation h6 ,.medium h6 ,.past h6 ,.bank h6 ,.other h6 ,.declaration h6 ,.attach h6{
+    float: left;
+    margin: 0px;
+    width: 20%;
+    font-size: 17px;
+    border-right: 1px solid black;
+    height: 33px;
+    margin-left: 3px;
+    font-weight: normal;
+}
+.student p ,.family p ,.sibling p ,.contact p ,.reservation p ,.medium p ,.past p ,.bank p ,.other p ,.declaration p ,.attach p{
+    float: left;
+    margin: 0px;
+    width: 20%;
+    font-size: 15px;
+    border-right: 1px solid black;
+    height: 30px;
+    margin-left: 3px;
+    padding-top: 3px;
+}
+.mobile{
+    display: none;
+}
+ button{
+    width: 5%;
+    height: 25px;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border-radius: 15px solid black;
+    margin-bottom: 20px;
+}
+@media only screen and (max-width:768px){
+    button{
+        width: 8%;
+    }
+}
+@media only screen and (max-width:600px){
+    #boundry{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .mobile h1{
+        font-size: 25px;
+        height: 62px;
+        padding-top: 12px;
+        margin-top: 0px;
+        background: linear-gradient(blue, white);
+        color: black;
+    }
+    .mobile p{
+        font-size: 23px;
+    }
+     button{
+        margin-left: 161px;
+        width: 20%;
+        font-size: 16px;
+        height: 27px;
+        background: black;
+        color: white;
+    }
+}

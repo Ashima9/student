@@ -1,0 +1,723 @@
+<div class="outer">
+    <div class="background">
+        <h1>Student Admission Form</h1>
+    </div>
+    <div class="content">
+        <div class="layer">
+            <p style="margin-top: 35px" (click)="School()">School Information</p>
+            <p (click)="Student()">Student Information</p>
+            <p (click)="Family()">Family Information</p>
+            <p (click)="Address()">Address Information</p>
+            <p (click)="Reservation()">Reservation Information</p>
+            <p (click)="Medium()">Medium Of Instruction</p>
+            <p (click)="Past()">Past School Information</p>
+            <p (click)="Bank()">Student Bank Information</p>
+            <p (click)="Other()">Other Information</p>
+            <button (click)="route()">Next</button>
+        </div>
+
+        <div class="info" *ngIf="school">
+            <fieldset>
+                <legend id="school" style="   height: 25px; 
+            border:1px solid black;
+            background: black;color : white; border-radius: 5px">School Information</legend>
+                <div class="box">
+                    <p>School Name:</p>
+                    <input type="text" [(ngModel)]="data.school.schoolName">
+                </div>
+                <div class="box">
+                    <p>School Code:</p>
+                    <input type="number" [(ngModel)]="data.school.schoolCode">
+                </div>
+                <div class="box">
+                    <p>U-Dise Code:</p>
+                    <input type="text" [(ngModel)]="data.school.udise">
+                </div>
+                <div class="box">
+                    <p>School Admission Number:</p>
+                    <input type="number" [(ngModel)]="data.school.admission">
+                </div>
+                <div class="box">
+                    <p>Admission Date:</p>
+                    <input type="date" [(ngModel)]="data.school.date">
+                </div>
+                <div class="box">
+                    <p>Session:</p>
+                    <input type="number" [(ngModel)]="data.school.session">
+                </div>
+                <div class="box">
+                    <p>Type of Admission:</p>
+                    <input type="text" [(ngModel)]="data.school.typeofadmission">
+                </div>
+                <div class="box">
+                    <p>Unique SRN Number:</p>
+                    <input type="number" [(ngModel)]="data.school.srn">
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">If re-Admission, Old Admission Number:</p>
+                    <input type="text" [(ngModel)]="data.school.readmission">
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">Enrollment Number Alloated by Board:</p>
+                    <input type="text" [(ngModel)]="data.school.enrollment">
+                </div>
+                <button (click)="Student()">Next</button>
+            </fieldset>
+        </div>
+
+        <div class="info" *ngIf="student">
+            <fieldset>
+                <legend id="student" style=" height: 25px; 
+                border:1px solid black;
+                background: black;color : white; border-radius: 5px">Student Information</legend>
+                <div class="box">
+                    <p>Class Of Admission:</p>
+                    <select [(ngModel)]="data.student.class" name="class" (click)="Class()">
+                        <option>Class 1</option>
+                        <option>Class 2</option>
+                        <option>Class 3</option>
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                        <option>Class 6</option>
+                        <option>Class 7</option>
+                        <option>Class 8</option>
+                        <option>Class 9</option>
+                        <option>Class 10</option>
+                        <option>Class 11</option>
+                        <option>Class 12</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p *ngIf="show">Stream:</p>
+                    <select [(ngModel)]="data.student.stream" *ngIf="show">
+                        <option>Arts</option>
+                        <option>Science</option>
+                        <option>Commerce</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Name:</p>
+                    <input type="text" [(ngModel)]="data.student.name">
+                </div>
+                <div class="box">
+                    <p>Date of Birth:</p>
+                    <input type="date" [(ngModel)]="data.student.dob">
+                </div>
+                <div class="box">
+                    <p>Gender:</p>
+                    <select [(ngModel)]="data.student.gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Aadhaar Number:</p>
+                    <input type="number" [(ngModel)]="data.student.aadhaar">
+                </div>
+                <div class="box">
+                    <p>EID Number:</p>
+                    <input type="number" [(ngModel)]="data.student.eid">
+                </div>
+                <div class="box">
+                    <p>Country:</p>
+                    <input type="text" [(ngModel)]="data.student.country">
+                </div>
+                <div class="box">
+                    <p>State:</p>
+                    <input type="text" [(ngModel)]="data.student.state">
+                </div>
+                <div class="box">
+                    <p>District:</p>
+                    <input type="text" [(ngModel)]="data.student.district">
+                </div>
+                <div class="box">
+                    <p>Tehsil:</p>
+                    <input type="text" [(ngModel)]="data.student.tehsil">
+                </div>
+                <div class="box">
+                    <p>City/Village:</p>
+                    <input type="text" [(ngModel)]="data.student.city">
+                </div>
+                <div class="box">
+                    <p>Email:</p>
+                    <input type="email" [(ngModel)]="data.student.email">
+                </div>
+                <div class="box">
+                    <p>Mobile Number:</p>
+                    <input type="number" [(ngModel)]="data.student.mobile">
+                </div>
+                <div class="box">
+                    <p>Nationality:</p>
+                    <input type="text" [(ngModel)]="data.student.nationality">
+                </div>
+                <div class="box">
+                    <p>Domicile Of Haryana?:</p>
+                    <select [(ngModel)]="data.student.domicile">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                <button id="back" (click)="School()">Back</button>
+                <button id="next" (click)="Family()">Next</button>
+            </div>
+            </fieldset>
+        </div>
+        <div class="info" *ngIf="family">
+            <fieldset>
+                <legend id="family" style=" height: 25px; 
+                border:1px solid black;
+                background: black;color : white; border-radius: 5px">Family Information</legend>
+                <div class="box">
+                    <p>Father's Name:</p>
+                    <input type="text" [(ngModel)]="data.family.fname">
+                </div>
+                <div class="box">
+                    <p>Father's Aadhaar Number:</p>
+                    <input type="number" [(ngModel)]="data.family.faadhaar">
+                </div>
+                <div class="box">
+                    <p>Mobile Number:</p>
+                    <input type="number" [(ngModel)]="data.family.fmobile">
+                </div>
+                <div class="box">
+                    <p>Father's Occupation:</p>
+                    <select [(ngModel)]="data.family.foccupation">
+                        <option>Agriculture(Farmer)</option>
+                        <option>Labourer</option>
+                        <option>Self Employed</option>
+                        <option>Private Job</option>
+                        <option>Haryana State Govt. Employee</option>
+                        <option>Other State Govt. Empoyee</option>
+                        <option>Central Govt. Employee</option>
+                        <option>Military Personnel</option>
+                        <option>Para Military Personnel</option>
+                        <option>PSU Employee</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">Office Address of Father(if working):</p>
+                    <input type="text" [(ngModel)]="data.family.faddress">
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">Father's Highest Education Qualification:</p>
+                    <select [(ngModel)]="data.family.fqualification">
+                        <option>Illiterate</option>
+                        <option>Schooling</option>
+                        <option>10th Pass</option>
+                        <option>12th Pass</option>
+                        <option>Certificate Holder</option>
+                        <option>Diploma Holder</option>
+                        <option>Bachelor's Degree Holder</option>
+                        <option>Master's Degree Holder</option>
+                        <option>Doctor's Degree Holder</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Father's Pan:</p>
+                    <input type="text" [(ngModel)]="data.family.fpan">
+                </div>
+                <div class="box">
+                    <p>Income Tax Payee:</p>
+                    <select [(ngModel)]="data.family.ftax">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Email ID:</p>
+                    <input type="email" [(ngModel)]="data.family.femail">
+                </div>
+                <div class="box">
+                    <p>Mother's Name:</p>
+                    <input type="text" [(ngModel)]="data.family.mname">
+                </div>
+                <div class="box">
+                    <p>Mothers's Aadhaar Number:</p>
+                    <input type="number" [(ngModel)]="data.family.maadhaar">
+                </div>
+                <div class="box">
+                    <p>Mobile Number:</p>
+                    <input type="number" [(ngModel)]="data.family.mmobile">
+                </div>
+                <div class="box">
+                    <p>Mother's Occupation:</p>
+                    <select [(ngModel)]="data.family.moccupation">
+                        <option>HouseWife</option>
+                        <option>Agriculture(Farmer)</option>
+                        <option>Labourer</option>
+                        <option>Self Employed</option>
+                        <option>Private Job</option>
+                        <option>Haryana State Govt. Employee</option>
+                        <option>Other State Govt. Empoyee</option>
+                        <option>Central Govt. Employee</option>
+                        <option>Military Personnel</option>
+                        <option>Para Military Personnel</option>
+                        <option>PSU Employee</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">Office Address of Mother(if working):</p>
+                    <input type="text" [(ngModel)]="data.family.maddress">
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">Mother's Highest Education Qualification:</p>
+                    <select [(ngModel)]="data.family.mqualification">
+                        <option>Illiterate</option>
+                        <option>Schooling</option>
+                        <option>10th Pass</option>
+                        <option>12th Pass</option>
+                        <option>Certificate Holder</option>
+                        <option>Diploma Holder</option>
+                        <option>Bachelor's Degree Holder</option>
+                        <option>Master's Degree Holder</option>
+                        <option>Doctor's Degree Holder</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Mother's Pan:</p>
+                    <input type="text" [(ngModel)]="data.family.mpan">
+                </div>
+                <div class="box">
+                    <p>Income Tax Payee:</p>
+                    <select [(ngModel)]="data.family.mtax">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Email ID:</p>
+                    <input type="email" [(ngModel)]="data.family.memail">
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">Whether, parents engaged in unclean Occupation?:</p>
+                    <select [(ngModel)]="data.family.unclean">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Parents Annual Income:</p>
+                    <input type="text" [(ngModel)]="data.family.income">
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">Student belongs to Below Poverty Line Family:</p>
+                    <select [(ngModel)]="data.family.bpl">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>BPL Certificate Number:</p>
+                    <input type="number" [(ngModel)]="data.family.certificate_no">
+                </div>
+                <div class="box">
+                    <p>Issuing Authority:</p>
+                    <input type="text" [(ngModel)]="data.family.issuing">
+                </div>
+                <div class="box">
+                    <p>Issue Date:</p>
+                    <input type="date" [(ngModel)]="data.family.idate">
+                </div>
+                <div class="box">
+                    <p>Sibling's Full Name:</p>
+                    <input type="text" [(ngModel)]="data.family.sname">
+                </div>
+                <div class="box">
+                    <p>Class:</p>
+                    <select [(ngModel)]="data.family.sclass">
+                        <option>Class 1</option>
+                        <option>Class 2</option>
+                        <option>Class 3</option>
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                        <option>Class 6</option>
+                        <option>Class 7</option>
+                        <option>Class 8</option>
+                        <option>Class 9</option>
+                        <option>Class 10</option>
+                        <option>Class 11</option>
+                        <option>Class 12</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Sibling SRN:</p>
+                    <input type="number" [(ngModel)]="data.family.srn">
+                </div>
+                <div class="box">
+                    <p>Relation:</p>
+                    <input type="text" [(ngModel)]="data.family.relation">
+                </div>
+                <div class="buttons">
+                <button id="back" (click)="Student()">Back</button>
+                <button id="next" (click)="Address()">Next</button>
+            </div>
+            </fieldset>
+        </div>
+        <div class="info" *ngIf="address">
+            <fieldset>
+                <legend id="address" style=" height: 25px; 
+                border:1px solid black;
+                background: black;color : white; border-radius: 5px">Address Information</legend>
+                <div class="box">
+                    <p>Corrospondence Address:</p>
+                    <input type="text" [(ngModel)]="data.address.caddress">
+                </div>
+                <div class="box">
+                    <p>Distance from school(KMs):</p>
+                    <input type="text" [(ngModel)]="data.address.cdistance">
+                </div>
+                <div class="box">
+                    <p>City/Village/Town:</p>
+                    <input type="text" [(ngModel)]="data.address.ccity">
+                </div>
+                <div class="box">
+                    <p>Tehsil:</p>
+                    <input type="text" [(ngModel)]="data.address.ctehsil">
+                </div>
+                <div class="box">
+                    <p>Block:</p>
+                    <input type="text" [(ngModel)]="data.address.cblock">
+                </div>
+                <div class="box">
+                    <p>Area of Living:</p>
+                    <select [(ngModel)]="data.address.carea">
+                        <option>Rural</option>
+                        <option>Urban</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>District:</p>
+                    <input type="text" [(ngModel)]="data.address.cdistrict">
+                </div>
+                <div class="box">
+                    <p>State:</p>
+                    <input type="text" [(ngModel)]="data.address.cstate">
+                </div>
+                <div class="box">
+                    <p>PIN:</p>
+                    <input type="number" [(ngModel)]="data.address.cpin">
+                </div>
+                <div class="box">
+                    <p>Landline:</p>
+                    <input type="number" [(ngModel)]="data.address.clandline">
+                </div>
+                <div class="box" style="margin-right: 250px">
+                    <p>Phone:</p>
+                    <input [(ngModel)]="data.address.cphone">
+                </div>
+                <div class="box">
+                    <p style="margin-top: 9px">If corrospondence address is same as permanent address:</p>
+                    <select style="margin-top: 17px" [(ngModel)]="data.address.same" id="same" (click)="SameAddress()">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div *ngIf="hide">
+                    <div class="box">
+                        <p>Permanent Address:</p>
+                        <input type="text" [(ngModel)]="data.address.paddress">
+                    </div>
+                    <div class="box">
+                        <p>City/Village/Town:</p>
+                        <input type="text" [(ngModel)]="data.address.pcity">
+                    </div>
+                    <div class="box">
+                        <p>Tehsil:</p>
+                        <input type="text" [(ngModel)]="data.address.ptehsil">
+                    </div>
+                    <div class="box">
+                        <p>Block:</p>
+                        <input type="text" [(ngModel)]="data.address.pblock">
+                    </div>
+                    <div class="box">
+                        <p>Area of Living:</p>
+                        <select [(ngModel)]="data.address.parea">
+                            <option>Rural</option>
+                            <option>Urban</option>
+                        </select>
+                    </div>
+                    <div class="box">
+                        <p>District:</p>
+                        <input type="text" [(ngModel)]="data.address.pdistrict">
+                    </div>
+                    <div class="box">
+                        <p>State:</p>
+                        <input type="text" [(ngModel)]="data.address.pstate">
+                    </div>
+                    <div class="box">
+                        <p>PIN:</p>
+                        <input type="number" [(ngModel)]="data.address.ppin">
+                    </div>
+                    <div class="box">
+                        <p>Landline:</p>
+                        <input type="number" [(ngModel)]="data.address.plandline">
+                    </div>
+                    <div class="box">
+                        <p>Phone:</p>
+                        <input type="number" [(ngModel)]="data.address.pphone">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="back" (click)="Family()">Back</button>
+                <button id="next" (click)="Reservation()">Next</button>
+            </div>
+            </fieldset>
+
+        </div>
+        <div class="info" *ngIf="reservation">
+            <fieldset>
+                <legend id="reservation" style="    height: 25px; 
+                border:1px solid black;
+                background: black;color : white; border-radius: 5px">Reservation Information</legend>
+                <div class="box">
+                    <p>Religion:</p>
+                    <select [(ngModel)]="data.reservation.religion">
+                        <option>Hindu</option>
+                        <option>Muslim</option>
+                        <option>Christian</option>
+                        <option>Jains</option>
+                        <option>Sikhs</option>
+                        <option>Parsi</option>
+                        <option>Buddhist</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Category:</p>
+                    <select [(ngModel)]="data.reservation.category">
+                        <option>General</option>
+                        <option>SC</option>
+                        <option>SBC</option>
+                        <option>BC-A</option>
+                        <option>BC-B</option>
+                        <option>ST</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Caste(if reserved category):</p>
+                    <input type="text" [(ngModel)]="data.reservation.caste">
+                </div>
+                <div class="box">
+                    <p>Certificate No.:</p>
+                    <input type="text" [(ngModel)]="data.reservation.certificate">
+                </div>
+                <div class="box">
+                    <p>Issuing Authority</p>
+                    <input type="text" [(ngModel)]="data.reservation.issuing">
+                </div>
+                <div class="box">
+                    <p>Issuing Date</p>
+                    <input type="date" [(ngModel)]="data.reservation.date">
+                </div>
+                <div class="box">
+                    <p>Physically Handicapped?</p>
+                    <select [(ngModel)]="data.reservation.handicapped">
+                        <option>No</option>
+                        <option>Blindness</option>
+                        <option>Low-vision</option>
+                        <option>Hearing Disability</option>
+                        <option>Speech Disability</option>
+                        <option>Loco-motor Disability</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Percentage(%):</p>
+                    <input type="text" [(ngModel)]="data.reservation.per">
+                </div>
+                <div class="box">
+                    <p>Mentally Challenged?:</p>
+                    <select [(ngModel)]="data.reservation.mentally">
+                        <option>No</option>
+                        <option>Mental Retardation</option>
+                        <option>Learning Disabality</option>
+                        <option>Cerebral Pasly</option>
+                        <option>Autism</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Percentage(%):</p>
+                    <input type="text" [(ngModel)]="data.reservation.mper">
+                </div>
+                <div class="box">
+                    <p>Genetic Disorder:</p>
+                    <select [(ngModel)]="data.reservation.disorder">
+                        <option>No</option>
+                        <option>Color Blindness</option>
+                        <option>Haemohilia</option>
+                        <option>Deletion Syndrome</option>
+                        <option>Angelman Syndrome</option>
+                        <option>Canavan Disease</option>
+                        <option>Charcot-Marie-Tooth Disease</option>
+                        <option>Cri du chat</option>
+                        <option>Cystic fibrosis</option>
+                        <option>Down Syndrome</option>
+                        <option>Duchenne muscular dystropy</option>
+                        <option>Harmochromatosis</option>
+                        <option>Klineefelter Syndrome</option>
+                        <option>Neurofibomatosis</option>
+                        <option>Phenylketonuria</option>
+                        <option>Polycystic kidney disease</option>
+                        <option>Prader-Willi Syndrome</option>
+                        <option>Sickle-cell disease</option>
+                        <option>Tay-Sachs disease</option>
+                        <option>Turner Syndrome</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <button id="back" (click)="Address()">Back</button>
+                <button id="next" (click)="Medium()">Next</button>
+            </div>
+            </fieldset>
+        </div>
+        <div class="info" *ngIf="medium">
+            <fieldset>
+                <legend id="medium" style="    height: 25px; 
+                border:1px solid black;
+                background: black;color : white; border-radius: 5px">Medium Of Instruction</legend>
+                <div class="box" style="margin-right: 55%">
+                    <p>Medium Of Instruction:</p>
+                    <select [(ngModel)]="data.medium.medium">
+                        <option>Hindi</option>
+                        <option>English</option>
+                    </select>
+                </div>
+                <h3>Compulsory Subjects:</h3>
+                <div class="box">
+                    <p> Subjects 1:</p>
+                    <input type="input" [(ngModel)]="data.medium.subject1">
+                </div>
+                <div class="box">
+                    <p> Subjects 2:</p>
+                    <input type="input" [(ngModel)]="data.medium.subject2">
+                </div>
+                <div class="box">
+                    <p> Subjects 3:</p>
+                    <input type="input" [(ngModel)]="data.medium.subject3">
+                </div>
+                <div class="box">
+                    <p> Subjects 4:</p>
+                    <input type="input" [(ngModel)]="data.medium.subject4">
+                </div>
+                <h3>Optional Subjects:</h3>
+                <div class="box">
+                        <p> Subjects 1:</p>
+                        <input type="input" [(ngModel)]="data.medium.osubject1">
+                </div>
+                <div class="box">
+                        <p> Subjects 2:</p>
+                        <input type="input" [(ngModel)]="data.medium.osubject2">
+                </div>
+                <div class="box">
+                        <p> Subjects 3:</p>
+                        <input type="input" [(ngModel)]="data.medium.osubject3">
+                </div>
+                <div class="box">
+                        <p> Subjects 4:</p>
+                        <input type="input" [(ngModel)]="data.medium.osubject4">
+                </div>
+                <div class="buttons">
+                    <button id="back" (click)="Reservation()">Back</button>
+                <button id="next" (click)="Past()">Next</button>
+            </div>
+            </fieldset>
+        </div>
+        <div class="info" *ngIf="past">
+            <fieldset>
+                <legend id="medium" style="    height: 25px; 
+                border:1px solid black;
+                background: black;color : white; border-radius: 5px">Past School Information</legend>
+                <div class="box">
+                    <p>Student Registration Number:</p>
+                    <input type="number" [(ngModel)]="data.pastSchool.srn">
+                </div>
+                <div class="box">
+                    <p>Name Of Previous School:</p>
+                    <input type="text" [(ngModel)]="data.pastSchool.name">
+                </div>
+                <div class="box">
+                    <p>School Code:</p>
+                    <input type="number" [(ngModel)]="data.pastSchool.code">
+                </div>
+                <div class="box">
+                    <p>Last Class Attended:</p>
+                    <select [(ngModel)]="data.pastSchool.class">
+                        <option>Class 1</option>
+                        <option>Class 2</option>
+                        <option>Class 3</option>
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                        <option>Class 6</option>
+                        <option>Class 7</option>
+                        <option>Class 8</option>
+                        <option>Class 9</option>
+                        <option>Class 10</option>
+                        <option>Class 11</option>
+                        <option>Class 12</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <p>Date of leaving:</p>
+                    <input type="date" [(ngModel)]="data.pastSchool.date">
+                </div>
+                <div class="box">
+                    <p>% Marks/Grade Obtained:</p>
+                    <input type="text" [(ngModel)]="data.pastSchool.marks">
+                </div>
+                <div class="buttons">
+                    <button id="back" (click)="Medium()">Back</button>
+                <button id="next" (click)="Bank()">Next</button>
+            </div>
+            </fieldset>
+        </div>
+        <div class="info" *ngIf="bank">
+            <fieldset>
+                <legend id="bank" style="    height: 25px; 
+                    border:1px solid black;
+                    background: black;color : white; border-radius: 5px">Bank Account Information</legend>
+                <div class="box">
+                    <p>Account Number:</p>
+                    <input type="number" [(ngModel)]="data.bank.account">
+                </div>
+                <div class="box">
+                    <p>IFSC Code:</p>
+                    <input type="text" [(ngModel)]="data.bank.ifsc">
+                </div>
+                <div class="box">
+                    <p>Bank Name:</p>
+                    <input type="text" [(ngModel)]="data.bank.bank">
+                </div>
+                <div class="box">
+                    <p>Branch Name & Code:</p>
+                    <input type="text" [(ngModel)]="data.bank.code">
+                </div>
+                <div class="buttons">
+                    <button id="back" (click)="Past()">Back</button>
+                <button id="next" (click)="Other()">Next</button>
+            </div>
+            </fieldset>
+
+        </div>
+        <div class="info" *ngIf="other">
+            <fieldset>
+                <legend id="others" style="    height: 25px; 
+                    border:1px solid black;
+                    background: black;color : white; border-radius: 5px">Other Information</legend>
+                <div class="box">
+                    <p>Student's Hobbies:</p>
+                    <input type="text" [(ngModel)]="data.other.hobby">
+                </div>
+                <div class="box">
+                    <p>Student's Past Achievements</p>
+                    <input type="text" [(ngModel)]="data.other.achievement">
+                </div>
+                <h6>Before proceeding further please check, After click on next you can't edit.</h6>
+                <div class="buttons">
+                    <button id="back" (click)="Bank()">Back</button>
+                <button id="next" (click)="finalButton()">Next</button>
+                
+            </div>
+                
+            </fieldset>
+        </div>
+    </div>
+</div>
