@@ -174,7 +174,37 @@
         font-size: 20px;
     }
 }
-
+@media only screen and (max-width:1200px){
+    .content{
+        top: 7%;
+    }
+    .layer{
+        width: 20%;
+        top: 7%;
+    }
+    .layer p{
+        font-size: 16px;
+    }
+    #school ,#student, #family,#address,#others{
+        width:25%;
+    }
+    #reservation ,#medium ,#past,#bank{
+        width: 28%;
+    }
+    .box{
+        width: 49%;
+    }
+    .info p{
+        width: 62%;
+        font-size: 16px;
+    }
+    .info input{
+        width: 40%;
+    }
+    .info select{
+        width: 42.5%;
+    }
+}
 @media only screen and (max-width:768px){
         .content{
             top: 9%;
@@ -297,23 +327,23 @@
         margin-left: 24%;
     }
     #school ,#student ,#family{
-        width: 51%;
+        width: 54%;
         font-size: 20px;
     }
     #address{
-        width: 53%;
+        width: 56%;
         font-size: 20px; 
     }
     #reservation ,#medium{
-        width:61%;
+        width:64%;
         font-size: 20px;
     }
     #bank{
-        width: 70%;
+        width: 74%;
         font-size: 20px;
     }
     #others{
-        width:54%;
+        width:55%;
         font-size: 20px;
     }
     #same{
